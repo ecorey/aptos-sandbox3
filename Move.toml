@@ -1,15 +1,19 @@
 [package]
-name = "sandbox3"
+name = "event"
 version = "1.0.0"
-authors = []
 
 [addresses]
-
-[dev-addresses]
+std = "0x1"
+aptos_framework = "0x1"
+aptos_token = "0x3"
+event = "0xae4c07500873e5eff6063d8715d63faa9fd9fd93610cca9f8f340b69388c20a0"
 
 [dependencies.AptosFramework]
 git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "mainnet"
+rev = "devnet"
 subdir = "aptos-move/framework/aptos-framework"
 
-[dev-dependencies]
+[dependencies.AptosToken]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "devnet"
+subdir = "aptos-move/framework/aptos-token"
