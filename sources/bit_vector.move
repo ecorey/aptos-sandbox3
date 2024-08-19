@@ -33,6 +33,40 @@ module random_nft::bit_vector {
     }
 
 
+
+    public entry fun append_vectors() {
+
+
+        let v1 = smart_vector::new<u64>();
+        let v2 = smart_vector::new<u64>();
+
+
+
+        smart_vector::push_back(&mut v1, 1);
+        smart_vector::push_back(&mut v1, 2); 
+
+        smart_vector::push_back(&mut v2, 3);
+        smart_vector::push_back(&mut v2, 4);
+
+
+        smart_vector::append(&mut v1, v2);
+
+
+        let length = smart_vector::length(&v1);
+        assert!(length == 4, 0);
+
+        let first_element = smart_vector::borrow(&v1, 0);
+        assert!(*first_element == 1, 0);
+
+
+
+
+        smart_vector::destroy(v1);
+
+
+    }
+
+
     
 
 
